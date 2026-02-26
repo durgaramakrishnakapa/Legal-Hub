@@ -1,0 +1,173 @@
+Build a full-stack React.js web application named "LegalFlow AI – Multi-Agent Legal Workflow System".
+
+The system should simulate an AI-native legal infrastructure with hardcoded logic and no external API calls.
+
+IMPORTANT:
+- All flows must be hardcoded.
+- No real LLM integration.
+- No backend server required.
+- Everything runs in React frontend.
+- Use functional components and modern React (hooks).
+- Clean UI using Tailwind CSS.
+- Professional legal-tech look (white, dark blue, grey theme).
+
+--------------------------------------------------------
+PROJECT OVERVIEW
+--------------------------------------------------------
+
+This system simulates 4 agents:
+
+1. Case Intake Agent
+2. Drafting Agent
+3. Citation Verification Agent
+4. Risk Scoring Agent
+
+Each agent must process structured data and pass it to the next step.
+
+--------------------------------------------------------
+FEATURES
+--------------------------------------------------------
+
+1. Landing Page
+- Title: "LegalFlow AI"
+- Subtitle: "AI-Powered Legal Workflow Infrastructure"
+- Button: "Start Case Processing"
+
+2. Case Input Page
+- Textarea for FIR / Case description input
+- Preload 3 hardcoded example cases selectable via buttons
+- Button: "Run Case Intake Agent"
+
+--------------------------------------------------------
+HARDCODED EXAMPLE CASES
+--------------------------------------------------------
+
+Example Case 1:
+"On 12 January 2024, Rajesh Kumar was accused of stealing a mobile phone from a shop at Connaught Place, Delhi. FIR registered under Section 379 IPC at Connaught Place Police Station."
+
+Example Case 2:
+"On 5 March 2023, Anil Sharma was arrested under Section 420 IPC for alleged financial fraud in Karol Bagh, Delhi. FIR registered at Karol Bagh Police Station."
+
+Example Case 3:
+"On 18 July 2022, Suresh Verma was charged under Section 498A IPC in a domestic dispute case in Rohini, Delhi."
+
+--------------------------------------------------------
+AGENT 1 – CASE INTAKE AGENT (HARDCODED LOGIC)
+--------------------------------------------------------
+
+Simulate extraction logic:
+
+If text contains:
+"379" → offense_type = "Theft"
+"420" → offense_type = "Cheating"
+"498A" → offense_type = "Domestic Cruelty"
+
+Extract:
+- Accused name (hardcoded matching from example cases)
+- IPC sections
+- Location
+- Police station
+
+Output structured JSON displayed in formatted code block.
+
+--------------------------------------------------------
+AGENT 2 – DRAFTING AGENT
+--------------------------------------------------------
+
+Using structured JSON, generate a formatted bail application template.
+
+Hardcoded template:
+
+IN THE COURT OF SESSIONS JUDGE, DELHI
+
+Bail Application under Section 439 CrPC
+
+Accused: [Name]
+
+Respected Sir/Madam,
+
+The present bail application is filed on behalf of [Name] in connection with FIR registered at [Police Station] under Section [IPC].
+
+The alleged incident occurred at [Location].
+
+The accused is innocent and has been falsely implicated. The offense alleged is [Offense Type].
+
+PRAYER:
+It is respectfully prayed that this Hon’ble Court grant bail to the accused in the interest of justice.
+
+Display in formatted document UI box.
+
+--------------------------------------------------------
+AGENT 3 – CITATION VERIFICATION AGENT
+--------------------------------------------------------
+
+Hardcoded valid IPC sections:
+["379", "420", "498A", "302", "376"]
+
+Extract IPC from draft and verify.
+
+If valid:
+Show green check icon and message:
+"All IPC Sections Verified"
+
+If invalid:
+Show red warning:
+"Invalid IPC Section Detected"
+
+--------------------------------------------------------
+AGENT 4 – RISK SCORING AGENT
+--------------------------------------------------------
+
+Hardcoded logic:
+
+If 379 → Risk Score = 35%
+If 420 → Risk Score = 55%
+If 498A → Risk Score = 65%
+If 302 or 376 → Risk Score = 90%
+
+Display:
+- Risk Score percentage
+- Risk Level (Low / Medium / High)
+- Visual progress bar
+
+--------------------------------------------------------
+WORKFLOW ORCHESTRATION
+--------------------------------------------------------
+
+UI must visually show:
+
+Case Intake → Drafting → Verification → Risk Score
+
+Each step appears sequentially with animation.
+
+--------------------------------------------------------
+DESIGN REQUIREMENTS
+--------------------------------------------------------
+
+- Modern dashboard layout
+- Left sidebar with steps
+- Right main content panel
+- Smooth transitions
+- Tailwind styling
+- Responsive design
+
+--------------------------------------------------------
+BONUS FEATURES
+--------------------------------------------------------
+
+- Add "Download Draft as PDF" button (mock functionality)
+- Add "Reset Case" button
+- Show "AI Generated – Review Required" disclaimer
+
+--------------------------------------------------------
+OUTPUT REQUIREMENTS
+--------------------------------------------------------
+
+Provide:
+- Full React project structure
+- All components code
+- Clear separation of agents
+- All logic hardcoded
+- Ready-to-run code
+
+Ensure code is clean, readable, and production-style.
